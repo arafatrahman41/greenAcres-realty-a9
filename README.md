@@ -1,4 +1,8 @@
-# React + Vite
+# GreenAcres Realty
+
+## Live Site
+
+Visit our live site at: [GreenAcres Realty]( https://greenacres-realty.web.app)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
