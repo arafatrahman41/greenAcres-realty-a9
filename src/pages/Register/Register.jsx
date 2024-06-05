@@ -1,10 +1,21 @@
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast"
 
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className="md:w-2/3 p-8 space-y-3 rounded-xl mx-auto bg-[#82896E] my-20 text-gray-200">
       <h1 className="text-3xl font-bold text-center">Login</h1>
-      <form noValidate="" action="" className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="space-y-1">
           <label htmlFor="Name" className="block text-white">
             Your Name
@@ -15,7 +26,9 @@ const Register = () => {
             id="name"
             placeholder="Enter Your Name"
             className="w-full px-4 py-4 bg-base-200 text-gray-600"
+            {...register("yourName", { required: true })} 
           />
+          {errors.yourName && toast.error("This field is required")}
         </div>
         <div className="space-y-1">
           <label htmlFor="photo" className="block text-white">
@@ -27,6 +40,7 @@ const Register = () => {
             id="photo"
             placeholder="Add Your Photo"
             className="w-full px-4 py-4 bg-base-200 text-gray-600"
+            
           />
         </div>
         <div className="space-y-1">
@@ -38,7 +52,6 @@ const Register = () => {
             name="email"
             id="email"
             placeholder="ledivid@mailinator.com"
-            required
             className="w-full px-4 py-4 bg-base-200 text-gray-600"
           />
         </div>
@@ -51,7 +64,6 @@ const Register = () => {
             name="password"
             id="password"
             placeholder="******"
-            required
             className="w-full px-4 py-4 bg-base-200 text-gray-600"
           />
         </div>
