@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import toast from "react-hot-toast";
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false)
     const {signIn} = useContext(AuthContext)
   const {
     register,
@@ -16,10 +19,10 @@ const Login = () => {
     const {email, password} = data;
     signIn(email, password)
     .then(result => {
-        console.log(result);
+        toast.success(`${result.user.displayName} Logged in Successfully`);
     })
     .catch(error => {
-        console.log(error);
+        toast.error(error.message);
     })
   };
 
@@ -47,12 +50,12 @@ const Login = () => {
             />
             {errors.email && <span>This field is required</span>}
           </div>
-          <div className="space-y-1">
+          <div className="space-y-1 relative">
             <label htmlFor="password" className="block dark:text-gray-600">
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               placeholder="Password"
@@ -60,6 +63,9 @@ const Login = () => {
               {...register("password", { required: true })}
             />
             {errors.password && <span>This field is required</span>}
+            <span className="text-gray-700 absolute top-11 right-3" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <IoEyeOff size={25} /> : <IoEye size={25} />}
+            </span>
           </div>
           <button className="block w-full p-3 text-center bg-[#264025] font-medium text-lg">
             Sign in

@@ -1,11 +1,14 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import toast from "react-hot-toast";
 
 const Register = () => {
-const {createUser} = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const { createUser } = useContext(AuthContext);
 
   const {
     register,
@@ -14,17 +17,17 @@ const {createUser} = useContext(AuthContext);
   } = useForm();
 
   const onSubmit = (data) => {
-    const {email, password} = data
+    const { email, password } = data;
 
     createUser(email, password)
-    .then(result => {
+      .then((result) => {
         console.log(result.user);
-    })
-    .catch(error => {
-        console.log(error);
-    })
+        toast.success(`${result.user.displayName} Register in Successfully`);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
-
 
   return (
     <div>
@@ -32,7 +35,7 @@ const {createUser} = useContext(AuthContext);
         <title>GreenAcres Realty-Register</title>
       </Helmet>
 
-        {/* Register Form */}
+      {/* Register Form */}
       <div className="md:w-2/3 p-8 space-y-3 rounded-xl mx-auto bg-[#82896E] my-20 text-gray-200">
         <h1 className="text-3xl font-bold text-center">Register</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -46,9 +49,9 @@ const {createUser} = useContext(AuthContext);
               id="name"
               placeholder="Enter Your Name"
               className="w-full px-4 py-4 bg-base-200 text-gray-600"
-              {...register("yourName",{required: true})}
+              {...register("yourName", { required: true })}
             />
-             {errors.yourName && <span>This field is required</span>}
+            {errors.yourName && <span>This field is required</span>}
           </div>
           <div className="space-y-1">
             <label htmlFor="photo" className="block text-white">
@@ -76,19 +79,24 @@ const {createUser} = useContext(AuthContext);
               {...register("email")}
             />
           </div>
-          <div className="space-y-1">
+          <div className="space-y-1 relative">
             <label htmlFor="password" className="block">
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               placeholder="******"
               className="w-full px-4 py-4 bg-base-200 text-gray-600"
               {...register("password")}
             />
-           
+            <span
+              className="text-gray-700 absolute top-11 right-3"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <IoEyeOff size={25} /> : <IoEye size={25} />}
+            </span>
           </div>
           <button className="block w-full p-3 text-center bg-[#264025] font-medium text-lg">
             Sign in
