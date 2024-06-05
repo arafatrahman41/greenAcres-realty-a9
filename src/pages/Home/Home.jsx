@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>GreenAcres Realty | Home</title>
+        <title>GreenAcres Realty-Home</title>
       </Helmet>
       <Slider />
       <Estates />
