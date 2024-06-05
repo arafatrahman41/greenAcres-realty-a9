@@ -1,0 +1,117 @@
+[
+    {
+        "image": "https://i.ibb.co/yRGfn9K/agricultural-land.jpg",
+        "estate_title": "Fertile Agricultural Land",
+        "id": "001",
+        "segment_name": "Agricultural Land",
+        "description": "This fertile agricultural land is perfect for farming, crop cultivation, and agribusiness ventures. Located in the heart of Iowa, this land offers rich soil, a reliable water supply, and easy access to local markets, making it ideal for a variety of agricultural activities.",
+        "price": 250000,
+        "status": "sale",
+        "area": 4500,
+        "location": "Iowa, USA",
+        "facilities": [
+            "Irrigation system",
+            "Fertile soil",
+            "Access roads",
+            "Electricity supply",
+            "Storage facilities"
+        ],
+        "additional_info":"Water rights included, Near local market"
+    },
+    {
+        "image": "https://i.ibb.co/KmWfP52/ranch-land.jpg",
+        "estate_title": "Expansive Livestock Ranch",
+        "id": "002",
+        "segment_name": "Ranches",
+        "description": "This expansive livestock ranch in Texas is ideal for livestock, equestrian activities, and expansive country living. The ranch includes several barns, extensive fencing, and water troughs to support a thriving livestock operation.",
+        "price": 3500,
+        "status": "rent",
+        "area": 2500,
+        "location": "Texas, USA",
+        "facilities": [
+            "Barns",
+            "Fencing",
+            "Water troughs",
+            "Grazing pastures",
+            "Veterinary facilities"
+        ],
+        "additional_info":"Includes 2-bedroom house, Adjacent to national park"
+    },
+    {
+        "image": "https://i.ibb.co/25bSnJy/dairy-farm.jpg",
+        "estate_title": "Modern Dairy Farm",
+        "id": "003",
+        "segment_name": "Farms",
+        "description": "This modern dairy farm in Wisconsin is designed for both traditional and modern farming practices. It features state-of-the-art milking equipment, ample storage facilities, and vast pasture land, making it an excellent choice for dairy farming.",
+        "price": 500000,
+        "status": "sale",
+        "area": 3500,
+        "location": "Wisconsin, USA",
+        "facilities": [
+            "Milking equipment",
+            "Storage facilities",
+            "Pasture land",
+            "Feed silos",
+            "Maintenance sheds"
+        ],
+        "additional_info":"Organic certification, Nearby school"
+    },
+    {
+        "image": "https://i.ibb.co/nR43zpW/vineyard-land.jpg",
+        "estate_title": "Charming Vineyard",
+        "id": "004",
+        "segment_name": "Vineyards",
+        "description": "Located in Napa Valley, this charming vineyard is a prime location for viticulture. It offers the perfect environment for growing grapes and producing wine, complete with a fully equipped winery, grape trellises, and a sophisticated irrigation system.",
+        "price": 4500,
+        "status": "rent",
+        "area": 3000,
+        "location": "Napa Valley, USA",
+        "facilities": [
+            "Winery",
+            "Grape trellises",
+            "Irrigation system",
+            "Tasting room",
+            "Storage tanks"
+        ],
+        "additional_info":"Wine cellar included, Panoramic views"
+    },
+    {
+        "image": "https://i.ibb.co/6sPmhwT/forest-land.jpg",
+        "estate_title": "Dense Forest Land",
+        "id": "005",
+        "segment_name": "Forests",
+        "description": "This dense forest land in Oregon offers majestic woodland areas perfect for conservation, recreation, or timber production. The land features extensive trails, diverse wildlife habitats, and well-maintained logging roads.",
+        "price": 400000,
+        "status": "sale",
+        "area": 4500,
+        "location": "Oregon, USA",
+        "facilities": [
+            "Trails",
+            "Wildlife habitats",
+            "Logging roads",
+            "Camping sites",
+            "Observation towers"
+        ],
+        "additional_info":"Protected wildlife area, Adjacent to river"
+    },
+    {
+        "image": "https://i.ibb.co/D1jmpQk/plantation-land.jpg",
+        "estate_title": "Historic Plantation",
+        "id": "006",
+        "segment_name": "Plantations",
+        "description": "This historic tea plantation in Charleston is an expansive estate perfect for specialized crops like tea. It includes processing facilities, worker housing, and a comprehensive irrigation system, all set within a scenic landscape of historical significance.",
+        "price": 850000,
+        "status": "sale",
+        "area": 1200,
+        "location": "Charleston, USA",
+        "facilities": [
+            "Processing facilities",
+            "Worker housing",
+            "Irrigation system",
+            "Visitor center",
+            "Tea tasting rooms"
+        ],
+        "additional_info":"Historic value, Scenic landscape"
+        
+    }
+]
