@@ -64,7 +64,7 @@ const Login = () => {
             />
             {errors.password && <span>This field is required</span>}
             <span
-              className="text-gray-700 absolute top-11 right-3"
+              className="text-gray-700 absolute top-11 right-3 cursor-pointer"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? <IoEyeOff size={25} /> : <IoEye size={25} />}
