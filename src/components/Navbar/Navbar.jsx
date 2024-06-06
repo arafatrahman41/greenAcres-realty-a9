@@ -83,7 +83,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 w-52"
+              className="mt-3 z-[2] p-2 shadow menu menu-sm dropdown-content bg-base-100 w-52"
             >
               <li>
                 <button className="btn btn-sm btn-ghost ">
