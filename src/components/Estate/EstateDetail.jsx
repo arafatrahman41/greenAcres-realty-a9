@@ -37,7 +37,7 @@ const EstateDetail = () => {
             </div>
             <p>{land.description}</p>
             <div className="flex justify-center items-center">
-              <div className="flex items-center gap-6 mt-8">
+              <div className="flex flex-col md:flex-row items-center gap-6 my-8">
                 <div
                   className="bg-base-300 px-4 py-2 h-40 w-64 text-center rounded-3xl flex flex-col justify-center items-center"
                   data-aos="fade-up"

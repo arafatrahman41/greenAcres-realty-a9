@@ -6,6 +6,7 @@ const Social = () => {
   // const [signInError, setSignInError] = useState("")
   const { googleSignIn, githubSignIn, twitterSignIn } = useAuth();
 
+  // navigate
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";

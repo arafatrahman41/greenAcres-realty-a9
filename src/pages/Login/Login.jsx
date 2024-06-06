@@ -5,6 +5,7 @@ import { IoEye, IoEyeOff } from "react-icons/io5";
 import toast from "react-hot-toast";
 import useAuth from "../../hook/useAuth";
 import Social from "../../components/Social/Social";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,11 +16,20 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  // navigate
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
+
+  // handle login
   const onSubmit = (data) => {
     const { email, password } = data;
     signIn(email, password)
       .then((result) => {
-        toast.success(`${result.user.displayName} Logged in Successfully`);
+        if (result.user) {
+          navigate(from);
+        }
+        toast.success("logged in successfully")
       })
       .catch((error) => {
         toast.error(error.message);

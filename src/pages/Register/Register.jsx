@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -16,14 +16,21 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
+  // navigate
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
+
+  // handle login
   const onSubmit = (data) => {
     const { email, password } = data;
-
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-        toast.success(`${result.user.displayName} Register in Successfully`);
-      })
+    .then((result) => {
+      if (result.user) {
+        navigate(from);
+      }
+      toast.success("Register in successfully")
+    })
       .catch((error) => {
         toast.error(error.message);
       });
