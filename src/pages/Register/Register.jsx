@@ -98,14 +98,14 @@ const Register = () => {
               {showPassword ? <IoEyeOff size={25} /> : <IoEye size={25} />}
             </span>
           </div>
-          <button className="block w-full p-3 text-center bg-[#264025] font-medium text-lg">
-            Sign in
+          <button className="block w-full p-3 text-center bg-[#264025] font-medium text-lg hover:opacity-90">
+            Register
           </button>
         </form>
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">
           Already have an account?
           <Link to="/login" className="underline dark:text-gray-800">
-            Sign in
+           Sign In
           </Link>
         </p>
       </div>

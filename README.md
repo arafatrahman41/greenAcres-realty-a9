@@ -19,6 +19,7 @@ For handling challenges in our project, we have used the following npm package:
 - **swiper**: For implementing touch sliders and carousels.
 - **react-hook-form**: For handling form validation and submission.
 - **aos**: For adding scroll animations to the elements.
+- **animate.css**: For adding animations to the elements.
 
 
  **Set up environment variables:**

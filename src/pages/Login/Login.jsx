@@ -70,7 +70,7 @@ const Login = () => {
               {showPassword ? <IoEyeOff size={25} /> : <IoEye size={25} />}
             </span>
           </div>
-          <button className="block w-full p-3 text-center bg-[#264025] font-medium text-lg">
+          <button className="block w-full p-3 text-center bg-[#264025] font-medium text-lg hover:opacity-90">
             Sign in
           </button>
         </form>

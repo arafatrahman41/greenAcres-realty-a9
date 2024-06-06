@@ -1,5 +1,4 @@
 import { FaFacebook, FaInstagram, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -7,25 +6,25 @@ const Footer = () => {
       <aside>
         <p className="text-2xl md:text-4xl font-extrabold">GreenAcres Realty</p>
         <p className="font-medium">
-          Providing reliable tech since 1992
+          Providing reliable dealer since 2000
         </p>
         <p className="font-medium">Copyright © 2024 - All right reserved by GreenAcres Realty</p>
       </aside>
       <nav>
         <h6 className="footer-title">Social</h6>
         <div className="grid grid-flow-col gap-4 text-2xl">
-          <Link>
+          <a>
             <FaFacebook />
-          </Link>
-          <Link>
+          </a>
+          <a>
             <FaInstagram />
-          </Link>
-          <Link>
+          </a>
+          <a>
             <FaGithub />
-          </Link>
-          <Link>
+          </a>
+          <a>
             <FaGoogle />
-          </Link>
+          </a>
         </div>
         <div>
           <form>

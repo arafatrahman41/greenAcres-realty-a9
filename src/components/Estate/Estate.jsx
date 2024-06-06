@@ -14,7 +14,7 @@ const Estate = ({ land }) => {
     id
   } = land;
   return (
-    <div className="p-6 border border-[#82896E] transition hover:scale-105 hover:border-[#264025] dark:bg-gray-50 dark:text-gray-900">
+    <div className="p-6 border border-[#264025] dark:bg-gray-50 dark:text-gray-900">
       <img
         src={image}
         alt=""
@@ -29,7 +29,7 @@ const Estate = ({ land }) => {
         </h2>
       </div>
       <p className="text-gray-400">
-        {description.length > 100 ? description.slice(0, 100) : description}
+        {description.length > 100 ? description.slice(0, 100) : description} <Link to={`/estate/${id}`} className="text-green-700 font-medium">Read More...</Link>
       </p>
       <div className="mt-3 md:flex md:justify-between">
         <div>
@@ -47,7 +47,7 @@ const Estate = ({ land }) => {
             ))}
           </ul>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-4 mt-4 md:mt-0">
           <div>
             <h2 className="text-lg font-semibold text-gray-600">Price</h2>
             <p className="text-gray-400">{price}</p>
@@ -63,7 +63,7 @@ const Estate = ({ land }) => {
         </div>
       </div>
       <Link
-          to={`/land${id}`}
+          to={`/estate/${id}`}
           className="relative inline-block text-lg group mt-4"
         >
           <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-500 ease-out border-2 border-[#264025] group-hover:text-white">
