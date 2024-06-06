@@ -2,7 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect} from "react";
 import { Helmet } from "react-helmet";
 
 const EstateDetail = () => {
