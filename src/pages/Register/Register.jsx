@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -8,7 +8,7 @@ import useAuth from "../../hook/useAuth";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser } = useAuth();
+  const { createUser, updateUserProfile } = useAuth();
 
   const {
     register,
@@ -18,19 +18,20 @@ const Register = () => {
 
   // navigate
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location?.state || "/";
+  const from = "/";
 
   // handle login
   const onSubmit = (data) => {
-    const { email, password } = data;
+    const { email, password, yourName, photo } = data;
     createUser(email, password)
-    .then((result) => {
-      if (result.user) {
-        navigate(from);
-      }
-      toast.success("Register in successfully")
-    })
+      .then(() => {
+        updateUserProfile(yourName, photo)
+        .then(() => {
+          navigate(from);
+        });
+
+        toast.success("Register in successfully");
+      })
       .catch((error) => {
         toast.error(error.message);
       });
@@ -112,7 +113,7 @@ const Register = () => {
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">
           Already have an account?
           <Link to="/login" className="underline dark:text-gray-800">
-           Sign In
+            Sign In
           </Link>
         </p>
       </div>

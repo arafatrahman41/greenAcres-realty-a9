@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
@@ -29,6 +30,14 @@ const AuthProvider = ({ children }) => {
     setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
+  // update user Profile
+  const updateUserProfile = (name, photo) => {
+   return updateProfile(auth.currentUser, {
+      displayName: name, 
+      photoURL: photo
+    })
+  }
 
   // sign in user
   const signIn = (email, password) => {
@@ -81,7 +90,8 @@ const AuthProvider = ({ children }) => {
     googleSignIn,
     twitterSignIn,
     githubSignIn,
-    loading
+    loading,
+    updateUserProfile
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
