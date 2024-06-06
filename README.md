@@ -2,7 +2,7 @@
 
 ## Live Site
 
-Visit our live site at: [GreenAcres Realty]( https://greenacres-realty.web.app)
+Visit our live site at: [GreenAcres Realty]( https://greenacres-realty.firebaseapp.com/)
 
 ## Features and Characteristics
 
