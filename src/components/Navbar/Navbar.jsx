@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hook/useAuth";
 
 const Navbar = () => {
+  const { logOut, user } = useAuth();
+
   const navLinks = (
     <>
       <li>
@@ -71,30 +74,39 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end gap-2">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn btn-ghost btn-circle avatar"
-        >
-          <div className="w-12 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
+        {user?.email ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={user.photoURL} alt="" />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 w-52"
+            >
+              <li>
+                <button className="btn btn-sm btn-ghost ">
+                  {user.displayName}
+                </button>
+              </li>
+              <li>
+                <button
+                onClick={logOut}
+                className="btn btn-sm btn-ghost">
+                  Logout
+                </button>
+              </li>
+            </ul>
           </div>
-        </div>
-
-        <Link
-          to="/login"
-          className="relative inline-block text-lg group"
-        >
-          <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-500 ease-out border-2 border-[#264025] group-hover:text-white">
-            <span className="absolute inset-0 w-full h-full px-5 py-3 bg-gray-50"></span>
-            <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-[#82896E] group-hover:-rotate-180 ease"></span>
-            <span className="relative">Login</span>
-          </span>
-          <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-[#82896E] group-hover:mb-0 group-hover:mr-0"></span>
-        </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="block w-32 p-3 text-center bg-[#264025] font-medium text-lg text-white hover:opacity-95"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import toast from "react-hot-toast";
+import useAuth from "../../hook/useAuth";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser } = useContext(AuthContext);
+  const { createUser } = useAuth();
 
   const {
     register,
@@ -36,7 +36,7 @@ const Register = () => {
       </Helmet>
 
       {/* Register Form */}
-      <div className="md:w-2/3 p-8 space-y-3 rounded-xl mx-auto bg-[#82896E] my-20 text-gray-200">
+      <div className="md:w-2/3 p-8 space-y-3 mx-auto bg-[#82896E] my-20 text-gray-200">
         <h1 className="text-3xl font-bold text-center">Register</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-1">
@@ -92,7 +92,7 @@ const Register = () => {
               {...register("password")}
             />
             <span
-              className="text-gray-700 absolute top-11 right-3"
+              className="text-gray-700 absolute top-11 right-3 cursor-pointer"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? <IoEyeOff size={25} /> : <IoEye size={25} />}
